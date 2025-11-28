@@ -1,6 +1,9 @@
 const { defineConfig } = require("cypress");
-require("dotenv").config();
-
+try {
+  require("dotenv").config();
+} catch (err) {
+  // dotenv not installed or not available in this environment
+}
 module.exports = defineConfig({
   projectId: process.env.CYPRESS_PROJECT_ID,
 
